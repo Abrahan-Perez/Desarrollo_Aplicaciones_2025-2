@@ -1,6 +1,6 @@
 import streamlit as st
 # Titulo de la aplicación
-st.title("Bienvanido a mi apliacación")
+st.title("Bienvanido a mi aplicación")
 
 #Solicitar nombre
 
