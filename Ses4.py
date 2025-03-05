@@ -7,5 +7,5 @@ limite = st.number_input("Ingrese un número límite para los bucles", min_value
 
 st.subheader("Bucle FOR")
 
-for i in range(1, limite + 1)
+for i in range(1, limite + 1):
     st.write(f"Iteración {i} con for")
