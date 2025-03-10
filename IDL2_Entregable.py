@@ -10,7 +10,7 @@ categorias_permitidas = ["Chocolates", "Caramelos", "Mashmelo", "Galletas", "Sal
 #Seleccion de categorias
 categorias_seleccionadas = st.multiselect("Categoría del producto", categorias_permitidas)
 #Opción de definir si el producto está en venta
-en_venta = st.radio("¿El producto está en venta?", ["SÍ, No"])
+en_venta = st.radio("¿El producto está en venta?", ["SÍ", "No"])
 # Botón para agregar el producto
 if st.button("Agregar Producto"):
     errores = []
