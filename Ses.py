@@ -34,6 +34,6 @@ if clientes.data:
         st.subheader(cliente["nombre"])
         st.write(f"{cliente["email"]}")
         st.write(f"{cliente["telefono"]}")
-        st.write(f"Fecha registro: {cliente["fecha_registro"]}")
+        st.write(f"Fecha registro: {cliente["fecha_ingreso"]}")
 else:
     st.info("No hay clientes registrados aún")
