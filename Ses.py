@@ -25,3 +25,15 @@ if st.button("Agregar Cliente"):
         st.warning("Nombre y Email son obligatorios")
         
 st.header("Cliente Registrado")
+
+#Obtener a los clientes
+
+clientes = supabase.table("clientes").select("*").execute()
+if clientes.data:
+    for cliente in clientes.data:
+        st.subheader(cliente["nombre"])
+        st.write(f"{cliente["email"]}")
+        st.write(f"{cliente["telefono"]}")
+        st.write(f"Fecha registro: {cliente["fecha_registro"]}")
+else:
+    st.info("No hay clientes registrados aún")
