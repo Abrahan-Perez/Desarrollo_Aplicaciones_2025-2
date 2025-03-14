@@ -31,9 +31,16 @@ st.header("Cliente Registrado")
 clientes = supabase.table("clientes").select("*").execute()
 if clientes.data:
     for cliente in clientes.data:
-        st.subheader(cliente["nombre"])
-        st.write(f"{cliente["email"]}")
-        st.write(f"{cliente["telefono"]}")
-        st.write(f"Fecha registro: {cliente["fecha_ingreso"]}")
+        with st.subheader(cliente["nombre"]):
+            st.write(f"{cliente["email"]}")
+            st.write(f"{cliente["telefono"]}")
+            st.write(f"Fecha registro: {cliente["fecha_ingreso"]}")
+            
+            #Boton para eliminar clientes
+            if st.button(f"Eliminar {cliente["nombre"]}", key=cliente["id"]):
+                supabase.table("clientes").delete().eq("id", cliente["id"]).execute()
+                st.success(f"{cliente["nombre"]} eliminado correctamente")
+                
+            #Formulario para actualizar cliente
 else:
     st.info("No hay clientes registrados aún")
